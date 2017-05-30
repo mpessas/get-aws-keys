@@ -1,7 +1,7 @@
 #!/bin/bash
 
 [ "$#" -ne 1 ] && exit -1
-[ "$1" != "ubuntu" ] && exit -1
+[ "$1" != "ec2-user" ] && exit -1
 
 usernames=$(aws iam list-users --query "Users[*].[UserName]" --output=text)
 for username in $usernames; do
